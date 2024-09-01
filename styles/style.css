@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+main {
+  background-color: #ffffff;
+  display: flex;
+  height: 750px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 #b5b5b5;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f5f5f5;
+}
+.left-container {
+  width: 400px;
+  border-right: 1px solid #e5e7eb;
+  height: 100%;
+  padding: 30px;
+}
+
+.location {
+  margin-top: 40px;
+}
+.right-container {
+  width: 503px;
+  padding-top: 36px;
+  padding-inline: 25px;
+}
+
+.calendar {
+  margin-top: 40px;
+}
+
+.calendar-week {
+  display: flex;
+  justify-content: space-between;
+}
+.calendar-week p {
+  margin: auto;
+}
+
+.calendarDay{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  padding-top: 36px;
+  padding-left: 8px;
+  row-gap: 36px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 10px;
+  margin-bottom: 10px;
+}
+
+.prev-next img {
+  cursor: pointer;
+}
+.prev-next img:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 50%;
+}
+
+.duration {
+  margin-top: 16px;
+}
+.dropdown {
+  margin-top: 8px;
+}
