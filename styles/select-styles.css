@@ -13,7 +13,7 @@ ul {
 
 body {
   height: 100vh;
-  box-shadow: ;
+  box-shadow: 0;
   position: relative;
   display: flex;
   justify-content: center;
