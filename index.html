@@ -10,8 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="scripts/select-script.js" defer></script>
+    <script src="./scripts/select-script.js" defer></script>
     <script src="./scripts/functionCalendar.js" defer></script>
+    <script src="./scripts/ableDays.js" defer></script>
     
   </head>
   <body>
@@ -19,7 +20,7 @@
       <div class="left-container">
         <div id="book-court">
           <h1>Book a Court</h1>
-          <p class="location">Location</p>
+          <p class="location title">Location</p>
           <div class="dropdown">
             <input type="text" placeholder="Pick a Country" readonly />
             <ul class="options">
@@ -27,7 +28,7 @@
               <li class="option">Brazil</li>
             </ul>
           </div>
-          <p class="duration">Duration</p>
+          <p class="duration title">Duration</p>
           <div class="dropdown">
             <input type="text" placeholder="Pick a Country" readonly />
             <ul class="options">
@@ -42,7 +43,7 @@
         <h2>Pick a date and time</h2>
         <div class="calendar">
           <div class="calendar-header">
-            <p class="calendar-month">September 2024</p>
+            <h3 class="calendar-month">September 2024</h3>
 
             <div class="prev-next">
               <img src="./img/Button - Previous month.svg" alt="previous" class="previous" />

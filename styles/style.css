@@ -37,6 +37,10 @@ body {
   margin-top: 40px;
 }
 
+.title{
+  font-weight:;
+}
+
 .calendar-month{
   display: flex;
 }
@@ -89,8 +93,16 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  color: #D7E164
+  color: #D7E164;
+  background-color: #F4F6D3
 }
+
+.openDay:hover, .selected{
+  cursor: pointer;
+  background-color: #D7E164;
+  color: white;
+}
+
 
 .calendar-header {
   display: flex;
@@ -113,4 +125,30 @@ body {
 .dropdown {
   margin-top: 8px;
 }
+
+aside{
+  margin-top: 110px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+.btn{
+  width: 268px;
+  height: 50px;
+  color: #D7E163;
+  background-color: white;
+  border: solid 1px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: #D7E163;
+  color: white;
+}
+
 

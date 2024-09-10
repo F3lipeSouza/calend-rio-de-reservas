@@ -7,18 +7,17 @@ const next = document.querySelector('.next');
 const last = document.querySelector('.previous');
 
 
-
+//muda o titulo e ano do mês;
 const changeTitle = () =>{
     const calendarMonth = document.querySelector('.calendar-month');
     let calendarTitle = calendarMonth.innerHTML = '';
-    let monthName = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+    let monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'july', 'August', 'September', 'October', 'November', 'December'];
     calendarTitle = calendarMonth.innerHTML = `${monthName[month]}  ${year}`;
 
 }
 
-
+//adiciona ponto colorido abaixo do dia atual;
 const putPoint = () =>{
-    //adiciona ponto colorido abaixo do dia atual;
     const diadoMes = document.querySelectorAll('.day');
        diadoMes.forEach(day => {
         if(currentDay.getDate() == day.textContent && currentDay.getFullYear() == year && currentDay.getMonth() == month){
@@ -31,6 +30,7 @@ const putPoint = () =>{
     })
 }
 
+//mostra no calendario os dias disponiveis para reserva;
 const openedDays = () =>{
     let openDays = [21, 22];
     const diadoMes = document.querySelectorAll('.day');
@@ -47,11 +47,58 @@ const openedDays = () =>{
     })
 }
 
+//adiciona a parte lateral com horarios disponiveis nas datas;
+const available = (day) =>{
+    const ableDays = document.querySelectorAll('.openDay');
+    const main = document.querySelector('main');
+
+    
+    console.log('ta workando'); 
+    const aside = document.createElement('aside');
+
+    //garante que a tag aside não existe no HTML;
+    let existAside = main.querySelector('aside');
+    if(existAside){
+        main.removeChild(existAside);
+        day.className = 'openDay day';
+    }
+
+
+
+    //cria tags e elementos necessarios para a nova aba;
+    const title = document.createElement('p');
+    if(day.target == ableDays[0]){
+        title.innerHTML = `Saturday, September 21`;
+        title.className = 'title';
+        day.target.className = 'openDay day selected';
+    };
+
+    if(day.target == ableDays[1]){
+        title.innerHTML = `Sunday, September 22`
+        title.className = 'title';
+        day.target.className = 'openDay day selected';
+    };
+
+    const btn1 = document.createElement('button');
+    btn1.innerHTML = '14:00pm';
+    btn1.className = 'btn';
+
+    const btn2 = document.createElement('button');
+    btn2.innerHTML = '15:00pm';
+    btn2.className = 'btn';
+    
+    aside.append(title, btn1, btn2);
+    main.append(aside);
+
+}
+
 
 //adiciona na tela os dias do mês;
 function calendar (){ 
     const firstDayMonth = new Date(year, month);
     let lastDayMonth = new Date(year, month + 1,0 ).getDate();
+
+
 
     changeTitle();
 
@@ -73,6 +120,12 @@ function calendar (){
     
     putPoint();
     openedDays();
+    const ableDays = document.querySelectorAll('.openDay');
+
+    ableDays.forEach(day =>{
+        day.addEventListener('click', available);
+    })
+    
 }
 calendar();
 
@@ -89,9 +142,10 @@ const nextMonth = () =>{
     };
 
     calendar();        
+    
 };
 
-//atualiza o calenadrio para o mês anterior;
+//atualiza o calendario para o mês anterior;
 const lastMonth = () =>{
     let day = document.querySelectorAll('.day');
     day.forEach(day =>day.remove())
@@ -108,8 +162,6 @@ const lastMonth = () =>{
 
 next.addEventListener('click', nextMonth);
 last.addEventListener('click', lastMonth);
-
-
 
 
 
