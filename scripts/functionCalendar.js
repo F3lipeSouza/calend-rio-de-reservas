@@ -13,7 +13,6 @@ const changeTitle = () =>{
     let calendarTitle = calendarMonth.innerHTML = '';
     let monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'july', 'August', 'September', 'October', 'November', 'December'];
     calendarTitle = calendarMonth.innerHTML = `${monthName[month]}  ${year}`;
-
 }
 
 //adiciona ponto colorido abaixo do dia atual;
