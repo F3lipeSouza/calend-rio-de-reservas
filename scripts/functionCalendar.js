@@ -60,21 +60,24 @@ const available = (day) =>{
     let existAside = main.querySelector('aside');
     if(existAside){
         main.removeChild(existAside);
-        day.className = 'openDay day';
+        ableDays.forEach(nonSelectedDay =>{ nonSelectedDay.className = 'openDay day'});
     }
 
-
+    let weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'july', 'August', 'September', 'October', 'November', 'December'];
 
     //cria tags e elementos necessarios para a nova aba;
     const title = document.createElement('p');
     if(day.target == ableDays[0]){
-        title.innerHTML = `Saturday, September 21`;
+        let selected = new Date(year, month, 21);
+        title.innerHTML = `${weekDay[selected.getDay()]}, ${monthName[month]} 21`;
         title.className = 'title';
         day.target.className = 'openDay day selected';
     };
 
     if(day.target == ableDays[1]){
-        title.innerHTML = `Sunday, September 22`
+        let selected = new Date(year, month, 22);
+        title.innerHTML = `${weekDay[selected.getDay()]}, ${monthName[month]} 22`
         title.className = 'title';
         day.target.className = 'openDay day selected';
     };
